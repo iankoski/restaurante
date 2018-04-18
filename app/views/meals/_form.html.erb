@@ -25,6 +25,7 @@
   <div class="field">
     <%= form.label "Ingredients " %>
     <%= form.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :description do |b| %>
+
       <div class="collection-check-box">
         <%= b.label %>
         <%= b.check_box %>

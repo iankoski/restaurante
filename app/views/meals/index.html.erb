@@ -20,14 +20,6 @@
         <td><%= meal.price %></td>
         <td><%= meal.cookingtime %></td>
 
-        <% @meal[ingredients].each do |i|%>
-      <tr>
-        <td><%= ingredients.description %></td>
-      </tr>
-    <% end %>
-
-
-
         <td><%= link_to 'Show', meal %></td>
         <td><%= link_to 'Edit', edit_meal_path(meal) %></td>
         <td><%= link_to 'Destroy', meal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -39,3 +31,4 @@
 <br>
 
 <%= link_to 'New Meal', new_meal_path %>
+<%= link_to 'New Ingredient', new_ingredient_path %>
