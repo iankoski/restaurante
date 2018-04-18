@@ -15,6 +15,7 @@ class MealsController < ApplicationController
   # GET /meals/new
   def new
     @meal = Meal.new
+    @ingredients = Ingredient.all
   end
 
   # GET /meals/1/edit
@@ -69,6 +70,6 @@ class MealsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def meal_params
-      params.require(:meal).permit(:description, :price, :cookingtime)
+      params.require(:meal).permit(:description, :price, :cookingtime, :@meals)
     end
 end

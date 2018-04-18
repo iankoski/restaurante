@@ -20,10 +20,18 @@
     <%= form.label :price %>
     <%= form.text_field :price, id: :meal_price %>
   </div>
+
+
   <div class="field">
-    <%= form.label :ingredient_id %>
-    <%= form.select :ingredient_id, Ingredient.all.collect{|ingredient| [ingredient.description, ingredient.id]} %>
+    <%= form.label "Ingredients " %>
+    <%= form.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :description do |b| %>
+      <div class="collection-check-box">
+        <%= b.label %>
+        <%= b.check_box %>
+      </div>
+    <% end %>
   </div>
+
 
 
 
