@@ -11,36 +11,36 @@ class InformationControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_information_url
+    get new_informations_url
     assert_response :success
   end
 
   test "should create information" do
     assert_difference('Information.count') do
-      post information_index_url, params: { information: { address: @information.address, name: @information.name, phone: @information.phone } }
+      post information_index_url, params: {information: {address: @information.address, name: @information.name, phone: @information.phone } }
     end
 
-    assert_redirected_to information_url(Information.last)
+    assert_redirected_to informations_url(Information.last)
   end
 
   test "should show information" do
-    get information_url(@information)
+    get informations_url(@information)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_information_url(@information)
+    get edit_informations_url(@information)
     assert_response :success
   end
 
   test "should update information" do
-    patch information_url(@information), params: { information: { address: @information.address, name: @information.name, phone: @information.phone } }
-    assert_redirected_to information_url(@information)
+    patch informations_url(@information), params: {information: {address: @information.address, name: @information.name, phone: @information.phone } }
+    assert_redirected_to informations_url(@information)
   end
 
   test "should destroy information" do
     assert_difference('Information.count', -1) do
-      delete information_url(@information)
+      delete informations_url(@information)
     end
 
     assert_redirected_to information_index_url

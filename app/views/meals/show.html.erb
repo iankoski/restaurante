@@ -12,8 +12,19 @@
 
 <p>
   <strong>Cookingtime:</strong>
-  <%= @meal.cookingtime %>
+  <%= @meal.cookingtime  %>
 </p>
+
+<% @meal.ingredients.each do |ingredient| %>
+  <ul style="list-style-type:none">
+    <li><%=ingredient.description%></li>
+  </ul>
+<%end%>
+
+
+
+
 
 <%= link_to 'Edit', edit_meal_path(@meal) %> |
 <%= link_to 'Back', meals_path %>
+

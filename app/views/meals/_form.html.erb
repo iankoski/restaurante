@@ -23,15 +23,21 @@
 
 
   <div class="field">
-    <%= form.label "Ingredients " %>
-    <%= form.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :description do |b| %>
-
-      <div class="collection-check-box">
-        <%= b.label %>
-        <%= b.check_box %>
-      </div>
+    <%= form.label :ingredients %>
+    <%= collection_check_boxes :meal, :ingredient_ids, Ingredient.all, :id, :description do |b| %>
+        <%= b.label {b.check_box + b.text}%>
     <% end %>
   </div>
+
+
+  <div class="field">
+    <%= form.label :information_id %>
+    <%= form.select :information_id, Information.all.collect{|information| [information.name, information.id]} %>
+  </div>
+
+
+
+
 
 
 
